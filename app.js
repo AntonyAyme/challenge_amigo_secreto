@@ -18,3 +18,13 @@ function actualizarLista() {
     const ul = document.querySelector("#listaAmigos");
     ul.innerHTML = listaAmigos.map(nombre => `<li>${nombre}</li>`).join("");
 }
+
+function sortearAmigo() {
+    if (listaAmigos.length === 0) {
+        alert("La lista está vacía. Agrega nombres antes de sortear.");
+        return;
+    }
+    const indiceAleatorio = Math.floor(Math.random() * listaAmigos.length);
+    const amigoSecreto = listaAmigos[indiceAleatorio];
+    document.querySelector("#resultado").innerHTML = `<li>Amigo Secreto: ${amigoSecreto}</li>`;
+}
